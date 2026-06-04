@@ -4,10 +4,8 @@
 **TaskFlow** is a full-stack personal task manager (a glorified to-do list) that allows users to create, view, update, and delete personal tasks. It features a clean, vibrant UI, smooth animations, and robust backend validation. This project fulfills the requirements for the "Personal Task Manager" assignment, focusing on clean separation of concerns, solid REST API design, and a highly polished user experience.
 
 ## Live Demo Links
-- **Frontend (Vercel):** *[Insert Vercel Link Here after deployment]*
-- **Backend API (Render):** *[Insert Render Link Here after deployment]*
-
-> **Note to reviewers:** When opening the deployed frontend for the first time, the backend might take ~50 seconds to spin up from sleep (standard Render free-tier behavior). Please allow a moment for the initial task list to load. Test in an incognito window as requested.
+- **Frontend (Vercel):** https://personal-task-manager-gt8pnj8f7-swarajs-projects-69d918fd.vercel.app/
+- **Backend API (Render):** https://personal-task-manager-gcwd.onrender.com
 
 ## Tech Stack
 ### Frontend
