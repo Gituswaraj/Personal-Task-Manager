@@ -1,0 +1,51 @@
+.statsBar {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-lg);
+  animation: fadeIn var(--transition-slow) ease 0.1s both;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: transform var(--transition-fast);
+}
+
+.stat:hover {
+  transform: scale(1.05);
+}
+
+.statActive {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.statCompleted {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.statDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dotActive {
+  background: var(--color-primary);
+}
+
+.dotCompleted {
+  background: var(--color-success);
+}
+
+.statCount {
+  font-weight: var(--font-weight-semibold);
+}

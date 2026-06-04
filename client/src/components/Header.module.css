@@ -1,0 +1,32 @@
+.header {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg) var(--space-lg);
+  animation: fadeIn var(--transition-slow) ease;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  background: linear-gradient(135deg, var(--color-primary), #D4623C, #C4523A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  letter-spacing: -0.5px;
+}
+
+.icon {
+  display: inline-flex;
+  -webkit-text-fill-color: var(--color-primary);
+  animation: bounce 2s ease infinite;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-xs);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.2px;
+}

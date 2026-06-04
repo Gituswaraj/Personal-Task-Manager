@@ -1,0 +1,42 @@
+[
+  {
+    "id": "3d095a91-ac5f-4ca2-81bf-1c1cc697d5bf",
+    "title": "Review project requirements",
+    "description": "Go through the project brief and make a checklist of all functional requirements.",
+    "dueDate": "2026-06-06T15:44:18.495Z",
+    "completed": true,
+    "createdAt": "2026-06-01T15:44:18.495Z",
+    "updatedAt": "2026-06-03T15:44:18.495Z",
+    "order": 0
+  },
+  {
+    "id": "d170a173-189f-4125-88b4-03b1a068566b",
+    "title": "Set up development environment",
+    "description": "Install Node.js, initialize the project, and configure TypeScript.",
+    "dueDate": "2026-06-05T15:44:18.495Z",
+    "completed": false,
+    "createdAt": "2026-06-02T15:44:18.495Z",
+    "updatedAt": "2026-06-02T15:44:18.495Z",
+    "order": 1
+  },
+  {
+    "id": "cb695f16-a999-4d52-ae42-6a7c8a4e7499",
+    "title": "Design the database schema",
+    "description": "Define the task model with all required fields.",
+    "dueDate": "2026-06-03T15:44:18.495Z",
+    "completed": false,
+    "createdAt": "2026-05-31T15:44:18.495Z",
+    "updatedAt": "2026-05-31T15:44:18.495Z",
+    "order": 2
+  },
+  {
+    "id": "655115c2-0641-4e55-a529-048ac667598a",
+    "title": "Write API documentation",
+    "description": "",
+    "dueDate": null,
+    "completed": false,
+    "createdAt": "2026-06-03T15:44:18.495Z",
+    "updatedAt": "2026-06-03T15:44:18.495Z",
+    "order": 3
+  }
+]

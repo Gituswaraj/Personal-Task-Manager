@@ -1,0 +1,92 @@
+.app {
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── FAB (Floating Action Button) ──────────────────────────────────── */
+.fab {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  z-index: 50;
+  animation: scaleIn var(--transition-slow) ease 0.3s both;
+}
+
+.fab:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+/* ── Toolbar Row ───────────────────────────────────────────────────── */
+.toolbar {
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Toast Container ───────────────────────────────────────────────── */
+.toastContainer {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.toast {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: white;
+  animation: slideDown var(--transition-base) ease forwards;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  max-width: 360px;
+  cursor: pointer;
+}
+
+.toastSuccess {
+  background: var(--color-success);
+}
+
+.toastError {
+  background: var(--color-danger);
+}
+
+@media (max-width: 768px) {
+  .fab {
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+  }
+
+  .toastContainer {
+    top: var(--space-md);
+    right: var(--space-md);
+    left: var(--space-md);
+  }
+
+  .toast {
+    max-width: 100%;
+  }
+}
