@@ -18,7 +18,7 @@ router.get("/", (_req: Request, res: Response) => {
 
 // ── GET /api/tasks/:id — Get a single task ───────────────────────────
 router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
-  const task = taskService.getTaskById(req.params.id);
+  const task = taskService.getTaskById(req.params.id as string);
   if (!task) {
     return next(new AppError(404, "Task not found"));
   }
@@ -51,7 +51,7 @@ router.patch(
   "/:id",
   validateRequest(UpdateTaskSchema),
   (req: Request, res: Response, next: NextFunction) => {
-    const task = taskService.updateTask(req.params.id, req.body);
+    const task = taskService.updateTask(req.params.id as string, req.body);
     if (!task) {
       return next(new AppError(404, "Task not found"));
     }
@@ -61,7 +61,7 @@ router.patch(
 
 // ── DELETE /api/tasks/:id — Delete a task ────────────────────────────
 router.delete("/:id", (req: Request, res: Response, next: NextFunction) => {
-  const deleted = taskService.deleteTask(req.params.id);
+  const deleted = taskService.deleteTask(req.params.id as string);
   if (!deleted) {
     return next(new AppError(404, "Task not found"));
   }
