@@ -8,7 +8,7 @@ interface TaskCardProps {
   onToggle: (id: string, completed: boolean) => void;
   onEdit: (task: Task) => void;
   onDelete: (task: Task) => void;
-  dragHandleProps?: Record<string, unknown>;
+  dragHandleProps?: any;
 }
 
 export default function TaskCard({
