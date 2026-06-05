@@ -11,18 +11,18 @@
   },
   {
     "id": "fb4fd20d-9123-401d-8bef-495048896d2b",
-    "title": "Set up development environment",
+    "title": "Set up development environment for Personal Task Manager",
     "description": "Install Node.js, initialize the project, and configure TypeScript.",
     "dueDate": "2026-06-06T16:25:06.332Z",
-    "completed": false,
+    "completed": true,
     "createdAt": "2026-06-03T16:25:06.332Z",
     "updatedAt": "2026-06-03T16:25:06.332Z",
     "order": 1
   },
   {
     "id": "1398c529-8fd2-42f7-bbf9-c19697ed68e9",
-    "title": "Design the database schema",
-    "description": "Define the task model with all required fields.",
+    "title": "Designed Server and client",
+    "description": "Designed Server and client.",
     "dueDate": "2026-06-04T16:25:06.332Z",
     "completed": false,
     "createdAt": "2026-06-01T16:25:06.332Z",
@@ -31,12 +31,22 @@
   },
   {
     "id": "0035c39d-4562-4bbb-9018-fa3cfee23fad",
-    "title": "Write API documentation",
+    "title": "Finalize the Assessment",
     "description": "",
     "dueDate": null,
-    "completed": false,
+    "completed": true,
     "createdAt": "2026-06-04T16:25:06.332Z",
     "updatedAt": "2026-06-04T16:25:06.332Z",
     "order": 3
+  },
+  {
+    "id": "0035c39d-4562-4bbb-9018-fa3cfee23fad",
+    "title": "Deployed on vercel-client and Render-server",
+    "description": "",
+    "dueDate": null,
+    "completed": true,
+    "createdAt": "2026-06-05T16:25:06.332Z",
+    "updatedAt": "2026-06-05T16:25:06.332Z",
+    "order": 4
   }
 ]

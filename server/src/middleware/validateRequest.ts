@@ -13,7 +13,6 @@ export function validateRequest(schema: ZodSchema) {
       next();
     } catch (err) {
       if (err instanceof ZodError) {
-        // Zod v4 uses `issues` instead of `errors`
         const issues = (err as any).issues ?? (err as any).errors ?? [];
         const details = issues.map((e: any) => ({
           field: (e.path ?? []).join("."),

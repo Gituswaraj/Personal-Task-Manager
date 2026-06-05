@@ -1,150 +1,281 @@
-# TaskFlow - Personal Task Manager
+# TaskFlow — Personal Task Manager
 
-## Project Title & Brief Description
-**TaskFlow** is a full-stack personal task manager (a glorified to-do list) that allows users to create, view, update, and delete personal tasks. It features a clean, vibrant UI, smooth animations, and robust backend validation. This project fulfills the requirements for the "Personal Task Manager" assignment, focusing on clean separation of concerns, solid REST API design, and a highly polished user experience.
+TaskFlow is a full-stack personal task manager built to make everyday task tracking simple and pleasant. Users can create, edit, complete, search, reorder, and delete tasks through a clean and responsive interface.
 
-## Live Demo Links
-- **Frontend (Vercel):** https://personal-task-manager-wine.vercel.app
-- **Backend API (Render):** https://personal-task-manager-ypli.onrender.com
+Although the core idea is similar to a to-do list, I treated this project as an opportunity to build a complete full-stack application with a structured REST API, backend validation, persistent local storage, reusable frontend components, and a polished user experience.
+
+## Live Demo
+
+* **Frontend:** https://personal-task-manager-wine.vercel.app
+* **Backend API:** https://personal-task-manager-ypli.onrender.com
+
+> The backend is hosted on Render's free tier, so the first request may take a few seconds if the service has been inactive.
+
+---
+
+## Features
+
+### Core Features
+
+* Create a new task with a title, optional description, and optional due date
+* View all tasks in a clean and organized list
+* Edit existing task details
+* Mark tasks as completed or active
+* Delete tasks
+* Search tasks by title
+* Filter tasks by status: **All**, **Active**, or **Completed**
+* Show active and completed task counts
+* Display clear empty states and feedback messages
+
+### Bonus Features
+
+* Drag-and-drop task reordering
+* JSON file persistence for local development
+* Toast notifications for user actions
+* Smooth UI animations and micro-interactions
+* Responsive design for different screen sizes
+* Backend integration tests using Vitest and Supertest
+
+---
 
 ## Tech Stack
+
 ### Frontend
-- **React (Vite) with TypeScript:** Functional components and hooks only. Vite provides a blazingly fast development experience, and TypeScript ensures type safety across the application.
-- **CSS Modules:** Chosen for component-scoped styling without the need for heavy external frameworks or runtime overhead. This allows for precise control over the warm, humanized aesthetic.
-- **Lucide React:** A lightweight and beautiful icon library.
-- **@hello-pangea/dnd:** A maintained fork of `react-beautiful-dnd` used for the drag-and-drop reordering bonus feature.
+
+* **React with Vite and TypeScript**
+  Used to build the user interface with functional components and hooks. TypeScript helps catch errors early and keeps the frontend code easier to maintain.
+
+* **CSS Modules**
+  Used for component-level styling without adding a large UI framework. This gave me more control over the warm and minimal visual style.
+
+* **Lucide React**
+  Used for lightweight and consistent icons.
+
+* **@hello-pangea/dnd**
+  Used to implement drag-and-drop task reordering.
 
 ### Backend
-- **Node.js with Express & TypeScript:** A robust and industry-standard choice for RESTful APIs.
-- **Zod:** Used for schema declaration and validation to ensure all incoming data is strictly typed and valid before processing.
-- **JSON File Persistence:** Tasks are saved to `server/src/data/tasks.json` so data survives server restarts (fulfills the "Nice to Have" requirement), simulating a simple database without setup overhead.
-- **Vitest & Supertest:** Modern, fast testing tools for API integration tests.
 
-## How to Run Locally
+* **Node.js, Express, and TypeScript**
+  Used to build the REST API and keep the server code structured and type-safe.
+
+* **Zod**
+  Used to validate incoming request data before it reaches the business logic.
+
+* **JSON File Storage**
+  Tasks are stored in `server/src/data/tasks.json`. This keeps the project simple and avoids unnecessary database setup for a small assignment.
+
+* **Vitest and Supertest**
+  Used for backend API integration testing.
+
+---
+
+## How I Used Antigravity
+
+I used Antigravity as a supporting development tool during the project rather than relying on it to generate the entire application.
+
+It mainly helped me:
+
+* Organize parts of the project structure
+* Improve some server-side logic
+* Handle backend exceptions more cleanly
+* Refine frontend CSS and visual details
+* Review small implementation decisions while debugging
+* Formatting documentation part
+
+I manually reviewed, tested, and adjusted the suggested changes so that I understood how the final code worked.
+
+---
+
+## Getting Started Locally
 
 ### Prerequisites
-- Node.js (v18+ recommended)
-- npm
 
-### Setup
+Make sure the following tools are installed:
 
-1. **Clone the repository and navigate to the project directory:**
-   ```bash
-   git clone <your-repo-url>
-   cd "Personal Task Manager"
-   ```
+* Node.js version 18 or later
+* npm
+* Git
 
-2. **Start the Backend Server (Terminal 1):**
-   ```bash
-   cd server
-   npm install
-   npm run dev
-   ```
-   *The API will start at `http://localhost:10000`*
+### 1. Clone the Repository
 
-3. **Start the Frontend Application (Terminal 2):**
-   ```bash
-   cd client
-   npm install
-   npm run dev
-   ```
-   *The React app will start at `http://localhost:5173`*
+```bash
+git clone <your-repository-url>
+cd personal-task-manager
+```
 
-4. **Run Backend Tests (Optional):**
-   ```bash
-   cd server
-   npm test
-   ```
+### 2. Start the Backend
+
+Open a terminal and run:
+
+```bash
+cd server
+npm install
+npm run dev
+```
+
+The backend will run at:
+
+```text
+http://localhost:10000
+```
+
+### 3. Start the Frontend
+
+Open a second terminal and run:
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+The frontend will run on the local URL shown by Vite, usually:
+
+```text
+http://localhost:5173
+```
+
+### 4. Run Backend Tests
+
+To run the backend API tests:
+
+```bash
+cd server
+npm test
+```
+
+---
 
 ## API Documentation
 
-The backend exposes a REST API at `http://localhost:5000/api/tasks`.
+The base URL for local development is:
 
-| Method | Path | Request Body | Response | Description |
-|--------|------|--------------|----------|-------------|
-| `GET` | `/api/tasks` | — | `Task[]` | Get all tasks, sorted by newest first |
-| `GET` | `/api/tasks/:id` | — | `Task` | Get a single task by ID |
-| `POST` | `/api/tasks` | `{ title, description?, dueDate? }` | `Task` (201) | Create a new task (title required, max 200 chars) |
-| `PATCH` | `/api/tasks/:id` | `{ title?, description?, dueDate?, completed? }` | `Task` | Update any field(s) of a task |
-| `DELETE` | `/api/tasks/:id` | — | `{ message }` (200) | Delete a task |
-| `PATCH` | `/api/tasks/reorder`| `{ orderedIds: string[] }` | `Task[]` | Update task ordering based on drag-and-drop |
+```text
+http://localhost:5000/api/tasks
+```
 
-**Task Object Shape:**
+| Method   | Endpoint             | Request Body                                     | Description                    |
+| -------- | -------------------- | ------------------------------------------------ | ------------------------------ |
+| `GET`    | `/api/tasks`         | —                                                | Get all tasks                  |
+| `GET`    | `/api/tasks/:id`     | —                                                | Get a single task by ID        |
+| `POST`   | `/api/tasks`         | `{ title, description?, dueDate? }`              | Create a new task              |
+| `PATCH`  | `/api/tasks/:id`     | `{ title?, description?, dueDate?, completed? }` | Update an existing task        |
+| `DELETE` | `/api/tasks/:id`     | —                                                | Delete a task                  |
+| `PATCH`  | `/api/tasks/reorder` | `{ orderedIds: string[] }`                       | Save a new drag-and-drop order |
+
+### Example Task Object
+
 ```typescript
 {
-  id: string;           // UUID
-  title: string;        // 1-200 chars
-  description: string;  // Max 1000 chars, default ""
-  dueDate: string | null; // ISO 8601 date string or null
+  id: string;
+  title: string;
+  description: string;
+  dueDate: string | null;
   completed: boolean;
-  createdAt: string;    // ISO timestamp
-  updatedAt: string;    // ISO timestamp
-  order: number;        // integer
+  createdAt: string;
+  updatedAt: string;
+  order: number;
 }
 ```
 
-**Standard Error Response (400/404/500):**
+### Example Error Response
+
 ```json
 {
   "error": {
     "message": "Validation failed",
     "details": [
-      { "field": "title", "message": "Title is required" }
+      {
+        "field": "title",
+        "message": "Title is required"
+      }
     ]
   }
 }
 ```
 
+---
+
+## Validation Rules
+
+The backend validates incoming data before processing it.
+
+| Field         | Rule                                                        |
+| ------------- | ----------------------------------------------------------- |
+| `title`       | Required when creating a task and limited to 200 characters |
+| `description` | Optional and limited to 1000 characters                     |
+| `dueDate`     | Optional and stored as an ISO 8601 date string              |
+| `completed`   | Must be a boolean value                                     |
+| `orderedIds`  | Must be an array of task IDs                                |
+
+---
+
 ## Project Structure
 
 ```text
 Personal Task Manager/
-├── client/                     # React Frontend
+├── client/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/         # Reusable UI components & CSS modules
-│   │   ├── context/            # TaskContext for global state management
-│   │   ├── services/           # API client wrapper
-│   │   ├── types/              # TypeScript interfaces (mirrors backend)
-│   │   ├── utils/              # Date formatting & checking utilities
-│   │   ├── App.tsx             # Main application assembly
-│   │   ├── index.css           # Global design system variables & resets
-│   │   └── main.tsx            # React root mount
+│   │   ├── components/         # Reusable UI components and CSS modules
+│   │   ├── context/            # Shared task state management
+│   │   ├── services/           # API request functions
+│   │   ├── types/              # TypeScript interfaces
+│   │   ├── utils/              # Date-related helper functions
+│   │   ├── App.tsx             # Main application component
+│   │   ├── index.css           # Global styles and design variables
+│   │   └── main.tsx            # React entry point
 │   └── vite.config.ts
 │
-├── server/                     # Node.js Express Backend
+├── server/
 │   ├── src/
-│   │   ├── data/               # tasks.json (persistent storage)
-│   │   ├── middleware/         # Zod validation & global error handlers
-│   │   ├── models/             # Task schemas
-│   │   ├── routes/             # Express routers
-│   │   ├── services/           # Core business logic (CRUD operations)
-│   │   └── index.ts            # Express server initialization
-│   ├── tests/                  # Integration tests (supertest + vitest)
+│   │   ├── data/               # JSON file used for task storage
+│   │   ├── middleware/         # Validation and error-handling middleware
+│   │   ├── models/             # Task schemas and types
+│   │   ├── routes/             # Express routes
+│   │   ├── services/           # Core CRUD logic
+│   │   └── index.ts            # Server entry point
+│   ├── tests/                  # Backend integration tests
 │   ├── package.json
 │   └── tsconfig.json
 │
-└── README.md                   # This file
+└── README.md
 ```
 
-## Next Steps
+---
 
-**What I accomplished (including bonuses):**
-- Full CRUD operations with clean separation of concerns.
-- Search tasks by title and filter by status.
-- JSON file persistence (server restarts won't wipe data).
-- Drag-and-drop reordering.
-- Polished, responsive UI with non-default colors, micro-animations, empty states, and toast notifications.
-- Strong backend validation with precise error messages.
+## Key Design Decisions
 
-**What I chose not to do (due to time constraint):**
-- Setup a full SQL/NoSQL database (JSON file was sufficient for the requirements).
-- Extensive frontend end-to-end testing (e.g. Playwright/Cypress), focusing on core backend API tests instead.
-- User Authentication (explicitly out of scope in the brief).
+### Why I Used JSON File Storage
 
-**What I would build next (with more time):**
-- **Authentication & Multi-user Support:** Move from a single-user assumptions to a real multi-tenant system.
-- **Database Migration:** Swap the JSON file out for SQLite or PostgreSQL using an ORM like Prisma.
-- **Categories/Tags:** Allow users to label tasks to group them (e.g., "Work", "Personal").
-- **Pagination:** If the task list grows very large, load it in chunks rather than sending the entire array at once.
-- **PWA Capabilities:** Add a service worker and manifest to make it installable on mobile devices.
+For this assignment, a full SQL or NoSQL database would have added setup complexity without being necessary for the required functionality. A JSON file was enough to demonstrate persistence and keep the backend easy to run locally.
+
+For a production version, I would replace this with a proper database such as PostgreSQL or SQLite.
+
+### Why I Used CSS Modules
+
+I wanted more control over the design instead of depending on a ready-made component library. CSS Modules allowed me to create scoped styles while keeping the interface lightweight and consistent.
+
+### Why I Added Drag-and-Drop Reordering
+
+Task order is important in a personal task manager. Drag-and-drop makes it easier for users to prioritize tasks naturally without editing each item individually.
+
+---
+
+## Current Limitations
+
+To keep the project focused and complete within the available time, I did not add:
+
+* User authentication
+* Multi-user support
+* A production-grade database
+* Extensive frontend end-to-end tests
+* Task categories or tags
+
+
+## Final Note
+
+TaskFlow is intentionally simple, but it covers the full workflow of building and deploying a complete application: planning the UI, creating reusable components, designing REST endpoints, validating data, handling errors, testing the backend, and deploying both the frontend and server.
+
+The project helped me improve my understanding of how a frontend and backend work together in a real application.
