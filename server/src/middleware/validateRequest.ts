@@ -13,8 +13,10 @@ export function validateRequest(schema: ZodSchema) {
       next();
     } catch (err) {
       if (err instanceof ZodError) {
-        const details = (err as any).errors.map((e: any) => ({
-          field: e.path.join("."),
+        // Zod v4 uses `issues` instead of `errors`
+        const issues = (err as any).issues ?? (err as any).errors ?? [];
+        const details = issues.map((e: any) => ({
+          field: (e.path ?? []).join("."),
           message: e.message,
         }));
         next(new AppError(400, "Validation failed", details));
