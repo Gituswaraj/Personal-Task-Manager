@@ -1,7 +1,7 @@
 import type { Task, TaskFormData } from "../types";
 import { fromDateInputValue } from "../utils/dateUtils";
 
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://personal-task-manager-ypli.onrender.com";
 
 // ── Generic Fetch Wrapper ────────────────────────────────────────────
 async function request<T>(

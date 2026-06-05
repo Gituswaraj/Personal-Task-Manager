@@ -5,7 +5,7 @@
 
 ## Live Demo Links
 - **Frontend (Vercel):** https://personal-task-manager-wine.vercel.app
-- **Backend API (Render):** https://personal-task-manager-gcwd.onrender.com
+- **Backend API (Render):** https://personal-task-manager-ypli.onrender.com
 
 ## Tech Stack
 ### Frontend
@@ -40,7 +40,7 @@
    npm install
    npm run dev
    ```
-   *The API will start at `http://localhost:5000`*
+   *The API will start at `http://localhost:10000`*
 
 3. **Start the Frontend Application (Terminal 2):**
    ```bash
