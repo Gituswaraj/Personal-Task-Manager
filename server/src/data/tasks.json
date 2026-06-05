@@ -6,8 +6,8 @@
     "dueDate": "2026-06-07T16:25:06.332Z",
     "completed": true,
     "createdAt": "2026-06-02T16:25:06.332Z",
-    "updatedAt": "2026-06-04T16:25:06.332Z",
-    "order": 0
+    "updatedAt": "2026-06-05T18:05:48.857Z",
+    "order": 4
   },
   {
     "id": "fb4fd20d-9123-401d-8bef-495048896d2b",
@@ -16,17 +16,17 @@
     "dueDate": "2026-06-06T16:25:06.332Z",
     "completed": true,
     "createdAt": "2026-06-03T16:25:06.332Z",
-    "updatedAt": "2026-06-03T16:25:06.332Z",
-    "order": 1
+    "updatedAt": "2026-06-05T18:05:48.857Z",
+    "order": 3
   },
   {
     "id": "1398c529-8fd2-42f7-bbf9-c19697ed68e9",
     "title": "Designed Server and client",
     "description": "Designed Server and client.",
     "dueDate": "2026-06-04T16:25:06.332Z",
-    "completed": false,
+    "completed": true,
     "createdAt": "2026-06-01T16:25:06.332Z",
-    "updatedAt": "2026-06-01T16:25:06.332Z",
+    "updatedAt": "2026-06-05T18:05:48.857Z",
     "order": 2
   },
   {
@@ -36,15 +36,15 @@
     "dueDate": null,
     "completed": true,
     "createdAt": "2026-06-04T16:25:06.332Z",
-    "updatedAt": "2026-06-04T16:25:06.332Z",
-    "order": 3
+    "updatedAt": "2026-06-05T18:05:48.857Z",
+    "order": 1
   },
   {
     "id": "0035c39d-4562-4bbb-9018-fa3cfee23fad",
     "title": "Deployed on vercel-client and Render-server",
     "description": "",
     "dueDate": null,
-    "completed": true,
+    "completed": false,
     "createdAt": "2026-06-05T16:25:06.332Z",
     "updatedAt": "2026-06-05T16:25:06.332Z",
     "order": 4

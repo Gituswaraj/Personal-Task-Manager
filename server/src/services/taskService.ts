@@ -213,4 +213,4 @@ export function reorderTasks(orderedIds: string[]): Task[] {
 }
 
 // Run seed on import
-seedIfEmpty();
+// seedIfEmpty();
