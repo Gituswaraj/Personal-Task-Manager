@@ -31,6 +31,10 @@ app.use(
 app.use(express.json());
 
 // ── Routes ───────────────────────────────────────────────────────────
+app.get("/", (_req, res) => {
+  res.send("Welcome to the TaskFlow API! Visit /api/tasks to see your data.");
+});
+
 app.get("/api/health", (_req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
