@@ -38,72 +38,57 @@ function seedIfEmpty(): void {
   const tasks = readTasks();
   if (tasks.length > 0) return;
 
-  const now = new Date();
   const seedTasks: Task[] = [
     {
-      id: uuidv4(),
-      title: "Review project requirements",
-      description:
-        "Go through the project brief and make a checklist of all functional requirements.",
-      dueDate: new Date(
-        now.getTime() + 2 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      completed: true,
-      createdAt: new Date(
-        now.getTime() - 3 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      updatedAt: new Date(
-        now.getTime() - 1 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      order: 0,
+      "id": "c5ab47d6-7cfd-4d69-afba-38ca54eadba2",
+      "title": "Review project requirements",
+      "description": "Go through the project brief and make a checklist of all functional requirements.",
+      "dueDate": "2026-06-07T16:25:06.332Z",
+      "completed": true,
+      "createdAt": "2026-06-02T16:25:06.332Z",
+      "updatedAt": "2026-06-05T18:05:48.857Z",
+      "order": 4
     },
     {
-      id: uuidv4(),
-      title: "Set up development environment",
-      description:
-        "Install Node.js, initialize the project, and configure TypeScript.",
-      dueDate: new Date(
-        now.getTime() + 1 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      completed: false,
-      createdAt: new Date(
-        now.getTime() - 2 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      updatedAt: new Date(
-        now.getTime() - 2 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      order: 1,
+      "id": "fb4fd20d-9123-401d-8bef-495048896d2b",
+      "title": "Set up development environment for Personal Task Manager",
+      "description": "Install Node.js, initialize the project, and configure TypeScript.",
+      "dueDate": "2026-06-06T16:25:06.332Z",
+      "completed": true,
+      "createdAt": "2026-06-03T16:25:06.332Z",
+      "updatedAt": "2026-06-05T18:05:48.857Z",
+      "order": 3
     },
     {
-      id: uuidv4(),
-      title: "Design the database schema",
-      description: "Define the task model with all required fields.",
-      dueDate: new Date(
-        now.getTime() - 1 * 24 * 60 * 60 * 1000
-      ).toISOString(), // Overdue!
-      completed: false,
-      createdAt: new Date(
-        now.getTime() - 4 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      updatedAt: new Date(
-        now.getTime() - 4 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      order: 2,
+      "id": "1398c529-8fd2-42f7-bbf9-c19697ed68e9",
+      "title": "Designed Server and client",
+      "description": "Designed Server and client.",
+      "dueDate": "2026-06-04T16:25:06.332Z",
+      "completed": true,
+      "createdAt": "2026-06-01T16:25:06.332Z",
+      "updatedAt": "2026-06-05T18:05:48.857Z",
+      "order": 2
     },
     {
-      id: uuidv4(),
-      title: "Write API documentation",
-      description: "",
-      dueDate: null,
-      completed: false,
-      createdAt: new Date(
-        now.getTime() - 1 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      updatedAt: new Date(
-        now.getTime() - 1 * 24 * 60 * 60 * 1000
-      ).toISOString(),
-      order: 3,
+      "id": "0035c39d-4562-4bbb-9018-fa3cfee23fad",
+      "title": "Finalize the Assessment",
+      "description": "",
+      "dueDate": null,
+      "completed": true,
+      "createdAt": "2026-06-04T16:25:06.332Z",
+      "updatedAt": "2026-06-05T18:05:48.857Z",
+      "order": 1
     },
+    {
+      "id": "1145c39d-4562-4bbb-9018-fa3cfee23fac",
+      "title": "Deployed on vercel-client and Render-server",
+      "description": "",
+      "dueDate": null,
+      "completed": false,
+      "createdAt": "2026-06-05T16:25:06.332Z",
+      "updatedAt": "2026-06-05T16:25:06.332Z",
+      "order": 4
+    }
   ];
 
   writeTasks(seedTasks);
@@ -213,4 +198,4 @@ export function reorderTasks(orderedIds: string[]): Task[] {
 }
 
 // Run seed on import
-// seedIfEmpty();
+seedIfEmpty();
