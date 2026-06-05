@@ -4,7 +4,7 @@
 **TaskFlow** is a full-stack personal task manager (a glorified to-do list) that allows users to create, view, update, and delete personal tasks. It features a clean, vibrant UI, smooth animations, and robust backend validation. This project fulfills the requirements for the "Personal Task Manager" assignment, focusing on clean separation of concerns, solid REST API design, and a highly polished user experience.
 
 ## Live Demo Links
-- **Frontend (Vercel):** personal-task-manager-wine.vercel.app
+- **Frontend (Vercel):** https://personal-task-manager-wine.vercel.app
 - **Backend API (Render):** https://personal-task-manager-gcwd.onrender.com
 
 ## Tech Stack
