@@ -273,6 +273,30 @@ To keep the project focused and complete within the available time, I did not ad
 * Extensive frontend end-to-end tests
 * Task categories or tags
 
+**What I Would Build Next**
+
+With more time, I would extend the application with:
+
+* **Authentication and Multi-user Support**
+Allow different users to manage their own private task lists.
+
+* **Database Migration**
+Replace JSON file storage with PostgreSQL or SQLite using Prisma.
+
+* **Categories and Tags**
+Let users group tasks into categories such as Work, Personal, or College.
+
+* **Priority Levels**
+Add High, Medium, and Low priority options.
+
+* **Pagination**
+Load tasks in smaller groups when the list becomes large.
+
+* **Progressive Web App Support**
+Make TaskFlow installable and more useful on mobile devices.
+
+* **Frontend End-to-End Tests**
+Add Playwright or Cypress tests for key user flows.
 
 ## Final Note
 
